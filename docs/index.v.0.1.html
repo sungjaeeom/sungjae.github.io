@@ -224,7 +224,7 @@
           var pathName = window.location.pathname;
           var path = pathName.split(separator)[2]!= "" ? separator+pathName.split(separator)[1]+separator:pathName;
           var targetUrl = "https://github.com/"+account+path;
-          window.location = targetUrl;
+          window.open(targetUrl);
         }
       </script>
   </head>

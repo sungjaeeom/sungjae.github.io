@@ -224,7 +224,7 @@
             var pathName = window.location.pathname;
             var path = pathName.split(separator)[2]!= "" ? separator+pathName.split(separator)[1]+separator:pathName;
             var targetUrl = "https://github.com/"+account+path;
-            window.location = targetUrl;
+            window.open(targetUrl);
         }
     </script>
   </head>
@@ -795,6 +795,27 @@ Content-Type: application/json
     </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+  <p>ETH-KRW를 시장가로 ETH 10개 매도 예제</p>
+  </blockquote>
+  <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span></code></pre>
+  <blockquote>
+  <p>ETH-KRW를 시장가로 1,000만원어치의 이더리움을 구매</p>
+  </blockquote>
+  <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tradingPairName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-KRW"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span></code></pre>
+  <aside class="warning">시장가 주문시 amount는 자신이 지불할 자산의 총량(ETH-KRW에서 매수의 경우 KRW, ETH-KRW에서 매도의 경우 ETH)입니다.</aside>
 <h3 id='ca90ffae49'>최소 주문수량</h3>
 <table><thead>
 <tr>
