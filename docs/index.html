@@ -206,19 +206,25 @@
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
     <script src="javascripts/all_nosearch.js"></script>
     <script>
-      function goAPIhistory(target){
-        var separator = "/";
-        var pathName = window.location.pathname;
-        var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
-        alert(path);
-        var origin = window.location.origin;
-        var targetUrl = origin+path+target;
-        var currentUrl = origin+path;
-        if(targetUrl == currentUrl){
-          return
+        function goAPIhistory(target){
+            var separator = "/";
+            var pathName = window.location.pathname;
+            var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
+            var origin = window.location.origin;
+            var targetUrl = origin+path+target;
+            var currentUrl = origin+path;
+            if(targetUrl == currentUrl){
+              return
+            }
+            window.location = targetUrl;
         }
-        window.location = targetUrl;
-      }
+        function apiGitHome(){
+            var account = window.location.host.split(".")[0];
+            var pathName = window.location.pathname;
+            var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
+            var targetUrl = "https://github.com/"+account+path;
+            window.location = targetUrl;
+        }
     </script>
   </head>
 
@@ -330,7 +336,7 @@
       </div>
       <ul class="toc-footer">
           <li><a href='https://www.gopax.co.kr/account/' target='_blank'>API 키 받기</a></li>
-          <li><a href='https://github.com/GopaxTechTeam/gopax' target='_blank'>Github</a></li>
+          <li><a href='javascripts:apiGitHome()' target='_blank'>Github</a></li>
           <li>
             <ul class="toc-footer">API history
               <li>
