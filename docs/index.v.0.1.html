@@ -212,13 +212,14 @@
           var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
           var origin = window.location.origin;
           var targetUrl = origin+path+target;
-          var currentUrl = origin+path;
+          var currentUrl = origin+pathName;
           if(targetUrl == currentUrl){
             return
           }
           window.location = targetUrl;
         }
         function apiGitHome(){
+          var separator = "/";
           var account = window.location.host.split(".")[0];
           var pathName = window.location.pathname;
           var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;

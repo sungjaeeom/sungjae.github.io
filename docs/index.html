@@ -212,13 +212,14 @@
             var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
             var origin = window.location.origin;
             var targetUrl = origin+path+target;
-            var currentUrl = origin+path;
+            var currentUrl = origin+pathName;
             if(targetUrl == currentUrl){
               return
             }
             window.location = targetUrl;
         }
         function apiGitHome(){
+            var separator = "/";
             var account = window.location.host.split(".")[0];
             var pathName = window.location.pathname;
             var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
@@ -285,7 +286,7 @@
                   <li>
                     <a href="#6796537949" class="toc-h2 toc-link" data-title="">주문 등록하기</a>
                   </li>
-                  <li>
+                  <li>index.v.0.1.html
                     <a href="#id-2" class="toc-h2 toc-link" data-title="id">주문 ID로 주문 취소하기</a>
                   </li>
                   <li>
