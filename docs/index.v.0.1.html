@@ -207,12 +207,16 @@
     <script src="javascripts/all_nosearch.js"></script>
     <script>
         function goAPIhistory(target){
-          var url = window.location.host;
-          var path = window.location.pathname;
-          var origin = window.location.origin;
-          var separater = "/";
-          window.location.replace(origin+path+target);
+        var pathName = window.location.pathname;
+        var path = pathName.split("/") >0 ?pathName.split("/")[0]:pathName;
+        var origin = window.location.origin;
+        var targetUrl = origin+path+target;
+        var currentUrl = origin+path;
+        if(targetUrl == currentUrl){
+          return
         }
+        window.location = targetUrl;
+      }
       </script>
   </head>
 
