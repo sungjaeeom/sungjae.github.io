@@ -210,9 +210,11 @@
         var url = window.location.host;
         var path = window.location.pathname;
         var origin = window.location.origin;
+        var separater = "/";
         alert(url);
         alert(path);
         alert(origin);
+        window.location.replace(origin+separater+path+separater+target);
       }
       </script>
   </head>
