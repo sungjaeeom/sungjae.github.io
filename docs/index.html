@@ -209,7 +209,7 @@
         function goAPIhistory(target){
             var separator = "/";
             var pathName = window.location.pathname;
-            var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
+            var path = pathName.split(separator)[2]!= "" ? separator+pathName.split(separator)[1]+separator:pathName;
             var origin = window.location.origin;
             var targetUrl = origin+path+target;
             var currentUrl = origin+pathName;
@@ -222,7 +222,7 @@
             var separator = "/";
             var account = window.location.host.split(".")[0];
             var pathName = window.location.pathname;
-            var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
+            var path = pathName.split(separator)[2]!= "" ? separator+pathName.split(separator)[1]+separator:pathName;
             var targetUrl = "https://github.com/"+account+path;
             window.location = targetUrl;
         }
