@@ -207,8 +207,9 @@
     <script src="javascripts/all_nosearch.js"></script>
     <script>
       function goAPIhistory(target){
+        var separator = "/";
         var pathName = window.location.pathname;
-        var path = pathName.split("/").length >0 ?pathName.split("/")[0]:pathName;
+        var path = pathName.split(separator).length >3 ? separator+pathName.split(separator)[1]+separator:pathName;
         alert(path);
         var origin = window.location.origin;
         var targetUrl = origin+path+target;
