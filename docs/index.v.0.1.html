@@ -204,7 +204,16 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Inconsolata" rel="stylesheet">
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+    <script src="javascripts/all_nosearch.js"></script>
+    <script>
+        function goAPIhistory(target){
+          var url = window.location.host;
+          var path = window.location.pathname;
+          var origin = window.location.origin;
+          var separater = "/";
+          window.location.replace(origin+separater+path+separater+target);
+        }
+      </script>
   </head>
 
   <body class="index" data-languages="[&quot;java&quot;,&quot;javascript&quot;,&quot;php&quot;,&quot;python&quot;,&quot;ruby&quot;]">
@@ -313,12 +322,18 @@
               </ul>
           </li>
       </div>
-        <ul class="toc-footer">
-            <li><a href='https://www.gopax.co.kr/account/' target='_blank'>API 키 받기</a></li>
-            <li><a href='https://www.gopax.co.kr/' target='_blank'>GOPAX</a></li>
-            <li><a href='https://github.com/GopaxTechTeam/gopax' target='_blank'>Github</a></li>
-            <li><a href='/index.html' >Current API</a></li>
-        </ul>
+      <ul class="toc-footer">
+          <li><a href='https://www.gopax.co.kr/account/' target='_blank'>API 키 받기</a></li>
+          <li><a href='https://github.com/GopaxTechTeam/gopax' target='_blank'>Github</a></li>
+          <li>
+            <ul class="toc-footer">API history
+              <li>
+                  <a href='javascript:goAPIhistory("/indexhtml")' target='_blank'>latest</a>
+                  <a href='javascript:goAPIhistory("/index.v.0.1.html")' target='_blank'>V0.1</a>
+              </li>
+            </ul>
+          </li>
+      </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>

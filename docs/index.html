@@ -211,9 +211,6 @@
         var path = window.location.pathname;
         var origin = window.location.origin;
         var separater = "/";
-        alert(url);
-        alert(path);
-        alert(origin);
         window.location.replace(origin+separater+path+separater+target);
       }
       </script>
@@ -331,6 +328,7 @@
             <li>
               <ul class="toc-footer">API history
                 <li>
+                    <a href='javascript:goAPIhistory("/indexhtml")' target='_blank'>latest</a>
                     <a href='javascript:goAPIhistory("/index.v.0.1.html")' target='_blank'>V0.1</a>
                 </li>
               </ul>
