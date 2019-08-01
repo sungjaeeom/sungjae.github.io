@@ -208,7 +208,8 @@
     <script>
       function goAPIhistory(target){
         var pathName = window.location.pathname;
-        var path = pathName.split("/") >0 ?pathName.split("/")[0]:pathName;
+        var path = pathName.split("/").length >0 ?pathName.split("/")[0]:pathName;
+        alert(path);
         var origin = window.location.origin;
         var targetUrl = origin+path+target;
         var currentUrl = origin+path;
