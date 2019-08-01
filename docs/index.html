@@ -207,11 +207,18 @@
     <script src="javascripts/all_nosearch.js"></script>
     <script>
       function goAPIhistory(target){
-        var url = window.location.host;
-        var path = window.location.pathname;
+        var pathName = window.location.pathname;
+        var path = pathName.split("/")
         var origin = window.location.origin;
-        var separater = "/";
-        window.location.replace(origin+path+target);
+        var targetUrl = origin+path[0]+target;
+        var currentUrl = origin+path[0];
+        alert(targetUrl);
+        alert(currentUrl);
+        if(targetUrl == currentUrl){
+          return
+        }
+        window.location = targetUrl;
+        
       }
     </script>
   </head>
@@ -328,7 +335,7 @@
           <li>
             <ul class="toc-footer">API history
               <li>
-                  <a href='javascript:goAPIhistory("index.html")' >latest</a>
+                  <a href='javascript:goAPIhistory("")' >latest</a>
               </li>
               <li>
                   <a href='javascript:goAPIhistory("index.v.0.1.html")' >V0.1</a>
